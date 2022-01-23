@@ -20,6 +20,5 @@ def getMessage(message):
         bot.send_message(chat_id=message.from_user.id, text="Напиши 'дай анекдот'")
 
 
-
 bot.polling(none_stop=True, interval=0)
 
