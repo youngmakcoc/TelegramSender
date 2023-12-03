@@ -1,0 +1,19 @@
+name: Build and push image
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'image tag'
+        required: true
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag youngmakcoc/telegramsender:$(date +%s)
