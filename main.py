@@ -33,14 +33,11 @@ def rjaka(message):
             bot.send_message(chat_id=message.from_user.id, text="Нажми кнопку или напиши 'анекдот'")
     elif message.chat.type == "group" or message.chat.type == "supergroup":
         if message.text.lower() == "анекдот":
-            anekdot = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
-            button = telebot.types.KeyboardButton("Анекдот")
-            anekdot.add(button)
             try:
-                bot.reply_to(message, text=getAnek(), reply_markup=anekdot)
+                bot.reply_to(message, text=getAnek())
             except Exception:
                 getAnek()
-                bot.reply_to(message, text=getAnek(), reply_markup=anekdot)
+                bot.reply_to(message, text=getAnek())
 
 
 bot.polling(none_stop=True, interval=0)
