@@ -11,12 +11,10 @@ def getAnek():
                                     headers={"Content-Type": "application/json; charset=windows-1251"}).content.decode(
                 "cp1251")  # запрос анекдота
             anek = json.loads(response, strict=False)["content"]
-            print(anek)
             return anek
 
         except Exception:
             i += 1
-            print(i)
 
 
 @bot.message_handler(content_types=["text"])
