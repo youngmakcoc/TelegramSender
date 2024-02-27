@@ -1,6 +1,6 @@
 import json, telebot, requests
 
-bot = telebot.TeleBot("")  # токен бота
+bot = telebot.TeleBot("5092500763:AAHnxDPudlb_jbaV4Gq6ZIGz_V_P6xfvKOo")  # токен бота
 
 
 def getAnek():
